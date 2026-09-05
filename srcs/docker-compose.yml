@@ -4,12 +4,9 @@ services:
   mariadb:
     container_name: mariadb
     image: mariadb:inception
-    build:
-      context: ./requirements/mariadb
-      dockerfile: Dockerfile
+    build: ./requirements/mariadb
     restart: always
-    env_file:
-      - .env
+    env_file: .env
     secrets:
       - db_password
       - db_root_password
@@ -23,17 +20,11 @@ services:
   wordpress:
     container_name: wordpress
     image: wordpress:inception
-    build:
-      context: ./requirements/wordpress
-      dockerfile: Dockerfile
+    build: ./requirements/wordpress
     restart: always
-    env_file:
-      - .env
+    env_file: .env
     secrets:
       - db_password
-      - wp_admin_password
-      - wp_user_password
-      - credentials
     volumes:
       - wordpress_data:/var/www/wordpress
     networks:
@@ -46,16 +37,13 @@ services:
   nginx:
     container_name: nginx
     image: nginx:inception
-    build:
-      context: ./requirements/nginx
-      dockerfile: Dockerfile
+    build: ./requirements/nginx
     restart: always
-    env_file:
-      - .env
+    env_file: .env
     ports:
       - "443:443"
     volumes:
-      - wordpress_data:/var/www/wordpress:ro
+      - wordpress_data:/var/www/wordpress
     networks:
       - inception_network
     depends_on:
@@ -66,12 +54,6 @@ secrets:
     file: ../secrets/db_password.txt
   db_root_password:
     file: ../secrets/db_root_password.txt
-  wp_admin_password:
-    file: ../secrets/wp_admin_password.txt
-  wp_user_password:
-    file: ../secrets/wp_user_password.txt
-  credentials:
-    file: ../secrets/credentials.txt
 
 volumes:
   mariadb_data:
@@ -80,14 +62,14 @@ volumes:
     driver_opts:
       type: none
       o: bind
-      device: /home/${LOGIN:-hhamza}/data/mariadb
+      device: /home/hhamza/data/mariadb
   wordpress_data:
     name: wordpress_data
     driver: local
     driver_opts:
       type: none
       o: bind
-      device: /home/${LOGIN:-hhamza}/data/wordpress
+      device: /home/hhamza/data/wordpress
 
 networks:
   inception_network:

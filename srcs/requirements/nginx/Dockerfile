@@ -1,15 +1,10 @@
-FROM debian:bullseye
+FROM debian:bookworm
 
-RUN apt-get update && apt-get install -y --no-install-recommends \
-    nginx \
-    openssl \
-    ca-certificates \
-    && rm -rf /var/lib/apt/lists/*
+RUN apt-get update && apt-get install -y nginx openssl && rm -rf /var/lib/apt/lists/*
 
-RUN mkdir -p /etc/nginx/ssl /var/www/wordpress && \
-    chown -R www-data:www-data /var/www/wordpress
+RUN rm -f /etc/nginx/sites-enabled/default /etc/nginx/sites-available/default
 
-COPY conf/nginx.conf /etc/nginx/nginx.conf
+COPY conf/nginx.conf /etc/nginx/conf.d/default.conf
 COPY tools/nginx.sh /usr/local/bin/nginx.sh
 RUN chmod +x /usr/local/bin/nginx.sh
 
