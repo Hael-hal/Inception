@@ -1,4 +1,4 @@
-*This project has been created as part of the 42 curriculum by hhamza.*
+*This project has been created as part of the 42 curriculum by hael-hal.*
 
 # Inception
 
@@ -34,7 +34,7 @@ All images are built from scratch using `debian:bullseye`.
 
 ### 1. Setup Local Domain
 ```bash
-sudo sh -c 'echo "127.0.0.1 hhamza.42.fr" >> /etc/hosts'
+sudo sh -c 'echo "127.0.0.1 hael-hal.42.fr" >> /etc/hosts'
 ```
 
 ### 2. Build and Run
@@ -43,8 +43,8 @@ make
 ```
 
 ### 3. Access
-- Website: `https://hhamza.42.fr`
-- Admin Panel: `https://hhamza.42.fr/wp-admin`
+- Website: `https://hael-hal.42.fr`
+- Admin Panel: `https://hael-hal.42.fr/wp-admin`
 
 ---
 

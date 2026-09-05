@@ -5,7 +5,7 @@
 - Ensure `srcs/.env` and `secrets/` files are present.
 - Create local persistent data folders:
   ```bash
-  mkdir -p /home/hhamza/data/mariadb /home/hhamza/data/wordpress
+  mkdir -p /home/hael-hal/data/mariadb /home/hael-hal/data/wordpress
   ```
 
 ## 2. Build & Launch
@@ -20,6 +20,6 @@
 - **Inspect named volumes**: `docker volume inspect mariadb_data wordpress_data`
 
 ## 4. Data Storage & Persistence
-- **MariaDB Database**: Persisted on host at `/home/hhamza/data/mariadb` via named volume `mariadb_data`.
-- **WordPress Files**: Persisted on host at `/home/hhamza/data/wordpress` via named volume `wordpress_data`.
-- Stopping containers (`make down`) does NOT erase data. Only `make fclean` removes the `/home/hhamza/data` directories.
+- **MariaDB Database**: Persisted on host at `/home/hael-hal/data/mariadb` via named volume `mariadb_data`.
+- **WordPress Files**: Persisted on host at `/home/hael-hal/data/wordpress` via named volume `wordpress_data`.
+- Stopping containers (`make down`) does NOT erase data. Only `make fclean` removes the `/home/hael-hal/data` directories.

@@ -11,9 +11,9 @@
 - **Restart**: `docker compose -f srcs/docker-compose.yml restart`
 
 ## 3. Access Website & Admin Panel
-- **Website**: `https://hhamza.42.fr`
-- **Admin Panel**: `https://hhamza.42.fr/wp-admin`
-  - Admin User: `hhamza_boss` (Password in `srcs/.env` / `secrets/credentials.txt`)
+- **Website**: `https://hael-hal.42.fr`
+- **Admin Panel**: `https://hael-hal.42.fr/wp-admin`
+  - Admin User: `hael-hal_boss` (Password in `srcs/.env` / `secrets/credentials.txt`)
   - Author User: `simpleuser` (Password in `srcs/.env` / `secrets/credentials.txt`)
 
 ## 4. Credentials

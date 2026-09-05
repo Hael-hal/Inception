@@ -1,6 +1,6 @@
 all:
-	@mkdir -p /home/hhamza/data/mariadb
-	@mkdir -p /home/hhamza/data/wordpress
+	@mkdir -p /home/hael-hal/data/mariadb
+	@mkdir -p /home/hael-hal/data/wordpress
 	docker compose -f srcs/docker-compose.yml up -d --build
 
 build:
@@ -13,7 +13,7 @@ clean: down
 	docker compose -f srcs/docker-compose.yml down --rmi all -v
 
 fclean: clean
-	@rm -rf /home/hhamza/data
+	@rm -rf /home/hael-hal/data
 	docker system prune -a --volumes -f
 
 re: fclean all
